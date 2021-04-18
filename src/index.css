@@ -1,15 +1,18 @@
 * {
-  padding:0px;
-  margin:0px;
+  padding: 0px;
+  margin: 0px;
   box-sizing: border-box;
 }
 
-body{
-  background-color: #E9E1C7;
+body {
+  background-color: #e9e1c7;
 }
 
-.content-container{
-  height:90vh;
-  width:90vw;
-  margin:0px auto;
+.content-container {
+  height: 90vh;
+  width: 90vw;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
