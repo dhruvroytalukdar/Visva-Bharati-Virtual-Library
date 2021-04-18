@@ -32,14 +32,17 @@ export default function ImageSilder() {
     config: config.wobbly
   });
 
-  return transitions.map(({ item, props, key }) => (
-    <animated.div
-      className="main-image"
-      key={key}
-      style={{
-        ...props,
-        backgroundImage: `url(${item.url})`
-      }}
-    />
-  ));
+  return (
+    transitions &&
+    transitions.map(({ item, props, key }) => (
+      <animated.div
+        className="main-image"
+        key={key}
+        style={{
+          ...props,
+          backgroundImage: `url(${item.url})`
+        }}
+      />
+    ))
+  );
 }
