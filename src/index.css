@@ -9,7 +9,7 @@ body {
 }
 
 .content-container {
-  height: 100vh;
+  height: fit-content;
   width: 90vw;
   margin: 0px auto;
   display: flex;
@@ -20,6 +20,7 @@ body {
 
 @media screen and (max-width: 650px) {
   .content-container {
-    height: 140vh !important;
+    height: fit-content;
+    margin-top: 1.4rem;
   }
 }
