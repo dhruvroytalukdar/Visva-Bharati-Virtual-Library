@@ -1,0 +1,9 @@
+.nav_links {
+  text-decoration: none !important;
+  color: black !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100% !important;
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function App({name, db}) {
+function test({name, db}) {
 
   const [list,setList] = useState([]);
   
