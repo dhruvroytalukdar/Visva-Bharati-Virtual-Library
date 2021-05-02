@@ -8,9 +8,9 @@ export default function Bhavans() {
   const [subject, setSubject] = useState(null);
   const [sem, setSem] = useState(null);
   const [havedata, setHaveData] = useState(false);
-
+  const [bhavanname, setBhavanName] = useState("");
   const fireFirebase = (name) => {
-    console.log(name);
+    setBhavanName(name);
     db.collection("bhavans")
       .doc(name)
       .collection("subjects")
@@ -49,8 +49,8 @@ export default function Bhavans() {
 
   return (
     <>
-      <div className="bhavan-container">
-        {!havedata && (
+      {!havedata && (
+        <div className="bhavan-container">
           <>
             <BhavanBox
               fireFirebase={fireFirebase}
@@ -71,10 +71,11 @@ export default function Bhavans() {
               imgSrc="images/bhasa.jpg"
             />
           </>
-        )}
-
-        {havedata && <BhavanContent subjects={subject} sems={sem} />}
-      </div>
+        </div>
+      )}
+      {havedata && (
+        <BhavanContent name={bhavanname} subjects={subject} sems={sem} />
+      )}
     </>
   );
 }

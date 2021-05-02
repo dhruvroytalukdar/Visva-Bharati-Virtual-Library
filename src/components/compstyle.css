@@ -116,11 +116,18 @@
   width: 35%;
   margin: 0rem 0.7rem;
   flex-direction: column;
-  border: 2px solid black;
+  box-shadow: 1px 2px 5px #747474;
   justify-content: space-around;
   align-items: center;
   border-radius: 5%;
   background-color: #f6edd0;
+  transition: 200ms ease-out;
+}
+
+.bhavan-box:hover {
+  width: 36%;
+  height: 71%;
+  box-shadow: 1px 2px 12px #636262;
 }
 
 .box-title {

@@ -1,0 +1,48 @@
+.card {
+  width: 95%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f6edd0;
+  /*border: 1px solid black;*/
+  box-shadow: 1px 2px 5px #747474;
+  margin: 1.2rem 0;
+  border-radius: 9px;
+  padding: 1.5rem;
+  transition: 100ms ease-in-out;
+}
+
+.card:hover {
+  width: 96%;
+  height: 91%;
+  box-shadow: 1px 2px 12px #636262;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.course {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  /* border: 1px solid black; */
+  box-shadow: 1px 1px 3px #747474;
+  width: 6rem;
+  height: 2rem;
+  text-align: center;
+  padding-top: 3px;
+  border-radius: 5px;
+  background: #dfded0;
+  transition: 100ms ease-in;
+}
+
+.link:hover {
+  background: #c2c1b3;
+}
