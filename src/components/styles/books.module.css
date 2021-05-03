@@ -13,10 +13,12 @@
   transition: 100ms ease-in-out;
 }
 
-.card:hover {
-  width: 96%;
-  height: 91%;
-  box-shadow: 1px 2px 12px #636262;
+@media screen and (min-width: 800px) {
+  .card:hover {
+    width: 96%;
+    height: 91%;
+    box-shadow: 1px 2px 12px #636262;
+  }
 }
 
 .title {

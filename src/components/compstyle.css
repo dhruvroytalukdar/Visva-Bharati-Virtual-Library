@@ -124,10 +124,12 @@
   transition: 200ms ease-out;
 }
 
-.bhavan-box:hover {
-  width: 36%;
-  height: 71%;
-  box-shadow: 1px 2px 12px #636262;
+@media screen and (min-width: 800px) {
+  .bhavan-box:hover {
+    width: 36%;
+    height: 71%;
+    box-shadow: 1px 2px 12px #636262;
+  }
 }
 
 .box-title {
