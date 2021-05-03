@@ -10,8 +10,8 @@ export default function BhavanContent({ name, subjects, sems }) {
     db.collection("bhavans")
       .doc(name)
       .collection("books")
-      .where("subject", "==", subject)
-      .where("sem", "==", sem)
+      .doc(subject)
+      .collection(sem)
       .get()
       .then((query) => {
         const doc = query.docs.map((data) => ({
@@ -19,14 +19,14 @@ export default function BhavanContent({ name, subjects, sems }) {
           id: data.id,
         }));
         setData(doc);
-        //console.log(data);
+        console.log(data);
       });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     var selectedSubject = e.target[0].value;
-    var selectedSem = parseInt(e.target[1].value);
+    var selectedSem = e.target[1].value;
     //console.log(selectedSubject, selectedSem);
     fetchData(selectedSubject, selectedSem);
   };
@@ -47,7 +47,12 @@ export default function BhavanContent({ name, subjects, sems }) {
       ));
     } else {
       return (
-        <p style={{ marginLeft: "1.1rem", marginTop: "1rem" }}>Comming Soon</p>
+        <p
+          className={mystyle.messages}
+          style={{ marginLeft: "1.1rem", marginTop: "1rem" }}
+        >
+          These books are unavailable now but will be back soon.
+        </p>
       );
     }
   };
@@ -55,7 +60,10 @@ export default function BhavanContent({ name, subjects, sems }) {
   const renderData = () => {
     if (data === null) {
       return (
-        <p style={{ marginLeft: "1.1rem", marginTop: "1rem" }}>
+        <p
+          className={mystyle.messages}
+          style={{ marginLeft: "1.1rem", marginTop: "1rem" }}
+        >
           Search Something
         </p>
       );
@@ -89,7 +97,13 @@ export default function BhavanContent({ name, subjects, sems }) {
             <label style={{ margin: "1.3rem" }} htmlFor="sem">
               Sem
             </label>
-            <select form="searchForm" id="sem" name="sem" required>
+            <select
+              style={{ width: "35px" }}
+              form="searchForm"
+              id="sem"
+              name="sem"
+              required
+            >
               {sems &&
                 sems.map((data) => (
                   <option key={data.id} value={data.id}>
